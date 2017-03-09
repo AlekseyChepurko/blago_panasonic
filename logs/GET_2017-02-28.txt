@@ -1,0 +1,16 @@
+{"Head":{"CompanyCODE":"panasonic","OrderNum":"106016","LName":"Фамилия","FName":"Имя","PName":"Отчество","Telephone":"+7 (917) 000-00-00","Email":"mail@mail.com","Locality":"Белогорск"},"Sales":[{"Brand":"Tefal","Cat":"Утюг","ModelName":"Utug","Price":"100001","Warranty":"12","Other":"Others...."},{"Brand":"Tefal","Cat":"Утюг","ModelName":"Utug","Price":"100001","Warranty":"12","Other":"Others...."},{"Brand":"Tefal","Cat":"Утюг","ModelName":"Utug","Price":"100001","Warranty":"12","Other":"Others...."},{"Brand":"Panasonic","Cat":"Холодильник","ModelName":"Пылесос","Price":"120001","Warranty":"12","Other":"Others...."}]}
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
