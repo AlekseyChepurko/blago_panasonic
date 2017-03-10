@@ -1,7 +1,19 @@
 # Исправления проекта для компании благо
- хостинг, на котором находится проект: [Благо](https://online.skblago.ru/panasonic/app.html)
+ Адрес, по которому находится проект: [Благо](https://online.skblago.ru/panasonic/app.html)
 
 ## Пример запроса:
+
+Для тестов можно выбирать поле "Cat" одним из следующих вариантов:
+
+TEST1
+TEST2
+TEST3
+TEST4
+TEST5
+TEST6
+TEST7
+TEST8
+
 ```
  {  
    "Head":{  
