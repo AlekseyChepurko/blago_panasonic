@@ -1,0 +1,139 @@
+/*------------------- Basic select -------------------*/
+
+.basic-select
+    position: absolute
+    top: 25px
+    right: 127px
+    width: 102px
+    height: 40px
+    margin-top: 7px
+    font: 400 14px/38px $ar
+    color: #999
+    box-sizing: border-box
+    cursor: pointer
+    user-select: none
+    pointer-events: none
+    z-index: 100
+    transition: all $resize_tr
+    
+    &:before
+        content: ''
+        position: absolute
+        top: 0
+        bottom: 0
+        right: 40px
+        width: 1px
+        background-color: #ccc
+        pointer-events: none
+    
+    &:after
+        content: ''
+        position: absolute
+        top: 19px
+        right: 16px
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 5px 4px 0 4px
+        border-color: #b4b4b4 transparent transparent transparent
+        pointer-events: none
+    
+    &._open
+        border-bottom: none
+        border-radius: 5px 5px 0 0
+        
+        &:after
+            transform: scaleY(-1)
+        
+        .basic-select__opts-wrap
+            display: block
+
+.basic-select__selected
+    width: 100%
+    height: 40px
+    padding-left: 14px
+    box-sizing: border-box
+    border: 1px solid #ccc
+    border-radius: 3px
+    user-select: none
+    
+.basic-select__opts-wrap
+    max-height: 120px
+    height: 120px
+    overflow: hidden
+    display: none
+    margin-top: 1px
+    margin-left: 0
+    padding-top: 6px
+    padding-bottom: 14px
+    border: 1px solid #ccc
+    border-radius: 3px
+    background-color: #fff
+    -webkit-overflow-scrolling: touch;
+    z-index: 10;
+
+.basic-select__opts-scroller
+    max-height: 100%
+    min-width: inherit !important
+    max-width: inherit !important
+    width: 110% !important;
+    margin: 0;
+    padding-right: 10%;
+    overflow: hidden
+    overflow-y: scroll
+    
+    &::-webkit-scrollbar
+        width: 0
+        
+.basic-select__bar-wrap
+    position: absolute
+    top: 20px
+    bottom: 20px
+    right: 18px
+    width: 2px
+    display: none
+    background-color: #e3e3e3
+    z-index: 105
+
+&.baron
+    .basic-select__bar-wrap
+        display: block
+    
+.basic-select__bar
+    position: absolute
+    left: -4px
+    width: 10px
+    cursor: pointer
+    z-index: 1
+    
+    +hover()
+        &:after
+            background-color: #0086cf
+    
+    &:after
+        content: ''
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 3px
+        width: 4px
+        background-color: #b4b4b4
+        border-radius: 2px
+        z-index: 5
+        transition: all $resize_tr
+
+.basic-select__opt
+    height: 30px
+    padding-left: 14px
+    color: #999
+    background-color: #fff
+    transition: all @resize_tr
+    
+    +hover()
+        color: #333
+    
+    &._selected
+        color: #333
+    
+    &._disabled
+        display: none

@@ -92,11 +92,11 @@ ob_start();
                 <input id="middle_name" name="middle_name" type="text" class="form-input js-form-input" data-type="text" value="<?= !empty($filled_data['PName']) ? $filled_data['PName'] : '' ?>">
             </div>
             <!-- Дата рождения -->
-            <div class="order-form-item _required">
+            <div class="order-form-item js-form-item">
                 <label class="form-label">Дата рождения</label>
                 <div class="order-form-item__content-wrap">
                     <!-- Селект День -->
-                    <div class="basic-select js-basic-select js-form-input _required js-form-item"  data-type="b-day">
+                    <div class="basic-select js-basic-select" data-type="b-day">
                         <div class="basic-select__selected js-basic-select-selected">День</div>
                         <div class="basic-select__opts-wrap">
                             <div class="basic-select__opts-scroller js-select-scroller">
@@ -108,11 +108,11 @@ ob_start();
                                 <div class="basic-select__bar js-select-scroller-bar"></div>
                             </div>
                         </div>
-                        <input type="hidden" name="birth_day" class="js-basic-select-input js-required js-form-input" data-type="b-day">
+                        <input type="hidden" name="birth_day" class="js-basic-select-input js-form-input" value="">
                     </div>
 
                     <!-- Селект Месяц -->
-                    <div class="basic-select js-basic-select js-form-input _required js-form-item" data-type="b-month">
+                    <div class="basic-select js-basic-select" data-type="b-month">
                         <div class="basic-select__selected js-basic-select-selected">Месяц</div>
                         <div class="basic-select__opts-wrap">
                             <div class="basic-select__opts-scroller js-select-scroller">
@@ -133,11 +133,11 @@ ob_start();
                                 <div class="basic-select__bar js-select-scroller-bar"></div>
                             </div>
                         </div>
-                        <input type="hidden" name="birth_month"  class="js-basic-select-input js-required js-form-input" data-type="b-month">
+                        <input type="hidden" name="birth_month" class="js-basic-select-input js-form-input" value="">
                     </div>
 
                     <!-- Селект Год -->
-                    <div class="basic-select js-basic-select js-form-input _required js-form-item" data-type="b-year">
+                    <div class="basic-select js-basic-select" data-type="b-year">
                         <div class="basic-select__selected js-basic-select-selected">Год</div>
                         <div class="basic-select__opts-wrap">
                             <div class="basic-select__opts-scroller js-select-scroller">
@@ -149,7 +149,7 @@ ob_start();
                                 <div class="basic-select__bar js-select-scroller-bar"></div>
                             </div>
                         </div>
-                        <input type="hidden" name="birth_year" class="js-basic-select-input js-required js-form-input" data-type="b-year">
+                        <input type="hidden" name="birth_year" class="js-basic-select-input js-form-input" value="">
                     </div>
                 </div>
             </div>

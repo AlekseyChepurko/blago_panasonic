@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Благо</title>
+        <meta charset="utf-8">
+        <!--<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">-->
+        <meta name="viewport" content="width=1000">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <!-- meta(name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE")-->
+        <meta name="description" content="Благо">
+        <meta name="keywords" content="Благо">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="imagetoolbar" content="no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="format-detection" content="address=no">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+    </head>
+
+    <style>
+        html {
+            height: 100%;
+            pointer-events: auto;
+        }
+
+        body {
+            height: 100%;
+            background: none;
+            pointer-events: auto;
+        }
+
+        .index-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #4886a7;
+            /*background: transparent url('../img/Pike.jpg') no-repeat 50% 50%;*/
+            background-size: cover;
+            z-index: 0;
+            opacity: .8;
+        }
+
+        .index-links {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            z-index: 1;
+            background-color: rgba(240,240,240,.8);
+        }
+
+        .title {
+            margin: 20px 0 14px 0;
+            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+            font-size: 14px;
+            color: #15a55e;
+            font-weight: 700;
+        }
+
+        a {
+            display: block;
+            margin: 20px 0 !important;
+            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+            font-size: 14px;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+        
+        a:hover {
+            color: #DD4B48;
+        }
+    </style>
+
+    <body>
+        <div class="index-bg"></div>
+        <div class="index-links">
+            <a href="01_main_one.html">1.1 Главная один товар</a>
+            <a href="01_main_many.html">1.2 Главная много товаров</a>
+            <a href="02_form_less_15000.html">2. Оформить полис до 15000</a>
+            <a href="02_form.html">2. Оформить полис свыше 15000</a>
+            <a href="03_payment_ok.html">3.1 Успешная оплата</a>
+            <a href="03_payment_error.html">3.2 Ошибка при оплате</a>
+        </div>
+    </body>
+</html>

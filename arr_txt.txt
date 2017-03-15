@@ -1,0 +1,14 @@
+<?php
+
+ a = Array('PanasonicSale' => array(
+          'Num' => '0',
+          'Brand' => 'Tefal',
+          'Cat' =>'1969003709',
+          'ModelName' =>'Utug',
+          'Price' => '123.2',
+          'Warranty' =>'1',
+          'Other' =>'Other...',
+          'Program' => 'EXT'
+         ));
+         
+print_r(a);

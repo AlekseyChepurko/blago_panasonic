@@ -97,6 +97,7 @@ if (!empty($data['Head']->Email)) {
     $params['data']['Email'] = $data['Head']->Email;
 }
 if (!empty($data['Head']->Telephone)) {
+    $params['data']['Telephone'] = $data['Head']->Telephone;
 }
 
 $result = $client->CalcRetailPanasonicInsurance($params);
@@ -112,78 +113,19 @@ $params['data']['Program'] = 'SAV';
 $sav_result = $client->CalcRetailPanasonicInsurance($params);
 $sav_result = isset($sav_result->CalcRetailPanasonicInsuranceResult->Result) ? (array)$sav_result->CalcRetailPanasonicInsuranceResult->Result : array();
 
-$ext_total = array();
+$ext_total = 0;
 if (!empty($all_result['XMLData'])) {
     $xml = new DOMDocument();
     $xml->loadXML($all_result['XMLData']);
-    $nodes = $xml->firstChild->childNodes; // nodes - waranty cost for each year for each sale in a single "array"
-    $nodesLength = $nodes->length;
+    $nodes = $xml->firstChild->childNodes;
 
-    $salesNumber = count($data['Sales']);
-
-    for ($sale = 0; $sale < $salesNumber; $sale++){     // for each sale constructs array of swaranty costs for each year
-        $data['Sales'][$sale]->nYearWarantyCost = array();
-    }
-
-    $yearCount = 0;
-    $saleCount = -1;
-    for ($i = 0; $i < $nodes->length; $i++) {       // waranty costs is an array, thats why here should be another counter which equals to zero every 3rd iteration
+    for ($i = 0; $i < $nodes->length; $i++) {
         $child = $nodes->item($i)->childNodes;
         $key = $child->item(0)->nodeValue;
-        if ($i % 3 == 0) {// 3 years for each sale
-            $yearCount = 0;
-            $saleCount++;
-        }
-
-        array_push($data['Sales'][$saleCount]->nYearWarantyCost, $child->item(1)->nodeValue);
-
-        $yearCount++;
-
+        $data['Sales'][$key]->ResultExt = $child->item(1)->nodeValue;
+        $ext_total += $data['Sales'][$key]->ResultExt;
     }
-
-    for ($year = 0; $year< 3; $year++){     //3 years
-        $warantyEnableForAll = true;
-        $protectionEnableForAll = true;
-
-        $commonCost = 0;
-        foreach ($sales as $sale) {
-            if($sale->nYearWarantyCost[$year] < 0) {
-                $warantyEnableForAll = false;
-                break;
-            }
-            else
-                $commonCost += $sale->nYearWarantyCost[$year];
-        }
-
-        if ($warantyEnableForAll)
-            $ext_total[$year + 1 ] = $commonCost;
-
-    }
-//    if ($data['Sales'][$saleCount]->nYearWarantyCost[$yearCount] > 0)
-//        $ext_total += $data['Sales'][$saleCount]->nYearWarantyCost[$yearCount];
-
 }
-
-//if (!empty($all_result['XMLData'])) {
-//    $xml = new DOMDocument();
-//    $xml->loadXML($all_result['XMLData']);
-//    $nodes = $xml->firstChild->childNodes;
-//    $nodesLength = $nodes->length;
-//
-//    $nYearWarantyCost = array();
-//
-//    for ($i = 0; $i < $nodes->length; $i++) {
-//        $child = $nodes->item($i)->childNodes;
-//        $key = $child->item(0)->nodeValue;
-//
-//        $data['Sales'][$key]->ResultExt = $child->item(1)->nodeValue;
-//        array_push($nYearWarantyCost,$data['Sales'][$key]->ResultExt);
-//        if ($data['Sales'][$key]->ResultExt > 0)
-//            $ext_total += $data['Sales'][$key]->ResultExt;
-//
-//    }
-//
-//}
 
 $sav_total = 0;
 if (!empty($sav_result['XMLData'])) {
@@ -195,10 +137,6 @@ if (!empty($sav_result['XMLData'])) {
         $child = $nodes->item($i)->childNodes;
         $key = $child->item(0)->nodeValue;
         $data['Sales'][$key]->ResultSav = $child->item(1)->nodeValue;
-        if ($data['Sales'][$key]->ResultSav < 0) {
-            $sav_total = -1;
-            break;
-        }
         $sav_total += $data['Sales'][$key]->ResultSav;
     }
 }

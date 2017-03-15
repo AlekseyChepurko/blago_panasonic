@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <!-- Head секция документа -->
+    ${require('html?interpolate&attrs=false&minimize=false!../_app/head.html')}
+
+    <body>
+        <section class="outer-wrap" data-html-class="form-page js-form-page">
+            <div class="inner-wrap">
+                <!-- Хэдер -->
+                ${require('html?interpolate&attrs=false&minimize=false!../Header/header.html')}
+
+                <div class="content js-content">
+                    <h1>Офомите страховой полис для приобретенных товаров</h1>
+
+                    <!-- Форма каждого товара-->
+                    <div class="goods-form">
+                        <div class="info-line">
+                            <div class="info-line__text-1">Вы страхуете следующие товары</div>
+                            <div class="info-line__text-2">Номер интернет заказа на приобретение техники: 0012444664</div>
+                        </div>
+                        <!-- Товар 1 -->
+                        <div class="good-line-wrap js-good-line-wrap _ins">
+                            <div class="good-line">
+                                <div class="good-line__img-b">
+                                    <img src="../img/_content/good_2.jpg" alt="" class="good-line__img">
+                                </div>
+                                <div class="good-line__info-1-b">
+                                    <div class="good-line__info-1__text-1">Электробритва / ES-LV65</div>
+                                    <div class="good-line__info-1__text-2">Кол-во: <span class="js-good-amount">1</span> шт</div>
+                                </div>
+                                <div class="good-line__fake-b"></div>
+                                <div class="good-line__info-2-b">
+                                    <div class="good-line__info-1__text-1 good-opt-ins">Продление гарантии на <span class="js-ins-length">3</span> года</div>
+                                    <div class="good-line__info-1__text-1 good-opt-protect">Защита</div>
+                                </div>
+                                <div class="good-line__price-b">
+                                    <div class="good-line__price-text">
+                                        <span class="good-line__price">1 099</span>
+                                        <span class="rub"> в</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Товар 2 -->
+                        <div class="good-line-wrap js-good-line-wrap _ins _protect">
+                            <div class="good-line">
+                                <div class="good-line__img-b">
+                                    <img src="../img/_content/good_1.jpg" alt="" class="good-line__img">
+                                </div>
+                                <div class="good-line__info-1-b">
+                                    <div class="good-line__info-1__text-1">Электробритва / ES-LV65</div>
+                                    <div class="good-line__info-1__text-2">Кол-во: <span class="js-good-amount">1</span> шт</div>
+                                </div>
+                                <div class="good-line__fake-b"></div>
+                                <div class="good-line__info-2-b">
+                                    <div class="good-line__info-1__text-1 good-opt-ins">Продление гарантии на <span class="js-ins-length">1</span> года</div>
+                                    <div class="good-line__info-1__text-1 good-opt-protect">Защита</div>
+                                </div>
+                                <div class="good-line__price-b">
+                                    <div class="good-line__price-text">
+                                        <span class="good-line__price">1 580</span>
+                                        <span class="rub"> в</span>
+                                    </div>
+                                    <div class="good-line__price-text">
+                                        <span class="good-line__price">990</span>
+                                        <span class="rub"> в</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form action="" method="GET" class="order-form js-order-form">  <!-- _only-step -->
+                        <!-- Блок 1 -->
+                        <div class="order-form__step-1">
+                            <div class="order-form__step-title">Информация о покупателе</div>
+                            <div class="order-form__step-info"><span>*</span> Обязательные для заполнения поля </div>
+                            <!-- Фамилия -->
+                            <div class="order-form-item _required js-form-item">
+                                <label for="last_name" class="form-label">Фамилия</label>
+                                <input id="last_name" name="last_name" type="text" class="form-input js-form-input js-required" data-type="name">
+                            </div>
+                            <!-- Имя -->
+                            <div class="order-form-item _required js-form-item">
+                                <label for="first_name" class="form-label">Имя</label>
+                                <input id="first_name" name="first_name" type="text" class="form-input js-form-input js-required" data-type="name">
+                            </div>
+                            <!-- Отчество -->
+                            <div class="order-form-item js-form-item">
+                                <label for="middle_name" class="form-label">Отчество</label>
+                                <input id="middle_name" name="middle_name" type="text" class="form-input js-form-input" data-type="text">
+                            </div>
+                            <!-- Дата рождения -->
+                            <div class="order-form-item js-form-item">
+                                <label class="form-label">Дата рождения</label>
+                                <div class="order-form-item__content-wrap">
+                                    <!-- Селект День -->
+                                    <div class="basic-select js-basic-select" data-type="b-day">
+                                        <div class="basic-select__selected js-basic-select-selected">День</div>
+                                        <div class="basic-select__opts-wrap">
+                                            <div class="basic-select__opts-scroller js-select-scroller">
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="1">1</div>  <!-- _selected -->
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2">2</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="3">3</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="4">4</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="5">5</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="6">6</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="7">7</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="8">8</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="9">9</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="10">10</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="11">11</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="12">12</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="13">13</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="14">14</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="15">15</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="16">16</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="17">17</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="18">18</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="19">19</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="20">20</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="21">21</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="22">22</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="23">23</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="24">24</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="25">25</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="26">26</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="27">27</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="28">28</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="29">29</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="30">30</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="31">31</div>
+                                            </div>
+                                            <div class="basic-select__bar-wrap js-select-scroller-bar-wrap">
+                                                <div class="basic-select__bar js-select-scroller-bar"></div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="birth_day" class="js-basic-select-input js-form-input" value="">
+                                    </div>
+
+                                    <!-- Селект Месяц -->
+                                    <div class="basic-select js-basic-select" data-type="b-month">
+                                        <div class="basic-select__selected js-basic-select-selected">Месяц</div>
+                                        <div class="basic-select__opts-wrap">
+                                            <div class="basic-select__opts-scroller js-select-scroller">
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="1">январь</div>  <!-- _selected -->
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2">февраль</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="3">март</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="4">апрель</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="5">май</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="6">июнь</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="7">июль</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="8">август</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="9">сентябрь</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="10">октябрь</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="11">ноябрь</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="12">декабрь</div>
+                                            </div>
+                                            <div class="basic-select__bar-wrap js-select-scroller-bar-wrap">
+                                                <div class="basic-select__bar js-select-scroller-bar"></div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="birth_month" class="js-basic-select-input js-form-input" value="">
+                                    </div>
+
+                                    <!-- Селект Год -->
+                                    <div class="basic-select js-basic-select" data-type="b-year">
+                                        <div class="basic-select__selected js-basic-select-selected">Год</div>
+                                        <div class="basic-select__opts-wrap">
+                                            <div class="basic-select__opts-scroller js-select-scroller">
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2016">2016</div>  <!-- _selected -->
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2015">2015</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2014">2014</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2013">2013</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2012">2012</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2011">2011</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2010">2010</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2009">2009</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2008">2008</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2007">2007</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2006">2006</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2005">2005</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2004">2004</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2003">2003</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2002">2002</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2001">2001</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2000">2000</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="1999">1999</div>
+                                            </div>
+                                            <div class="basic-select__bar-wrap js-select-scroller-bar-wrap">
+                                                <div class="basic-select__bar js-select-scroller-bar"></div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="birth_year" class="js-basic-select-input js-form-input" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Телефон -->
+                            <div class="order-form-item _required js-form-item">
+                                <label for="phone" class="form-label">Телефон</label>
+                                <input id="phone" name="phone" type="text" class="form-input js-form-input js-required js-phone" data-type="phone">
+                            </div>
+                            <!-- E-mail -->
+                            <div class="order-form-item _required js-form-item">
+                                <label for="email" class="form-label">E-mail</label>
+                                <input id="email" name="email" type="text" class="form-input js-form-input js-required" data-type="email">
+                            </div>
+                        </div>
+
+                        <!-- Блок 2 -->
+                        <div class="order-form__step-2">
+                            <div class="order-form__step-title">Паспортные данные</div>
+                            <!-- Серия и номер -->
+                            <div class="order-form-item js-form-item">
+                                <label for="pass_series" class="form-label">Серия и номер</label>
+                                <div class="order-form-item__content-wrap">
+                                    <input id="pass_series" name="pass_series" type="text" class="form-input _pass-series js-form-input js-pass-series" data-type="text">
+                                    <div class="pass-input-separator"></div>
+                                    <input id="pass_number" name="pass_number" type="text" class="form-input _pass-number js-form-input js-pass-number" data-type="text">
+                                </div>
+                            </div>
+                            <!-- Дата выдачи -->
+                            <div class="order-form-item js-form-item">
+                                <label class="form-label">Дата выдачи</label>
+                                <div class="order-form-item__content-wrap">
+                                    <!-- Селект День -->
+                                    <div class="basic-select js-basic-select" data-type="b-day">
+                                        <div class="basic-select__selected js-basic-select-selected">День</div>
+                                        <div class="basic-select__opts-wrap">
+                                            <div class="basic-select__opts-scroller js-select-scroller">
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="1">1</div>  <!-- _selected -->
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2">2</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="3">3</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="4">4</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="5">5</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="6">6</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="7">7</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="8">8</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="9">9</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="10">10</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="11">11</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="12">12</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="13">13</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="14">14</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="15">15</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="16">16</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="17">17</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="18">18</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="19">19</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="20">20</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="21">21</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="22">22</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="23">23</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="24">24</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="25">25</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="26">26</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="27">27</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="28">28</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="29">29</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="30">30</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="31">31</div>
+                                            </div>
+                                            <div class="basic-select__bar-wrap js-select-scroller-bar-wrap">
+                                                <div class="basic-select__bar js-select-scroller-bar"></div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="pass_day" class="js-basic-select-input js-form-input" value="">
+                                    </div>
+
+                                    <!-- Селект Месяц -->
+                                    <div class="basic-select js-basic-select" data-type="b-month">
+                                        <div class="basic-select__selected js-basic-select-selected">Месяц</div>
+                                        <div class="basic-select__opts-wrap">
+                                            <div class="basic-select__opts-scroller js-select-scroller">
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="1">январь</div>  <!-- _selected -->
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2">февраль</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="3">март</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="4">апрель</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="5">май</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="6">июнь</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="7">июль</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="8">август</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="9">сентябрь</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="10">октябрь</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="11">ноябрь</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="12">декабрь</div>
+                                            </div>
+                                            <div class="basic-select__bar-wrap js-select-scroller-bar-wrap">
+                                                <div class="basic-select__bar js-select-scroller-bar"></div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="pass_month" class="js-basic-select-input js-form-input" value="">
+                                    </div>
+
+                                    <!-- Селект Год -->
+                                    <div class="basic-select js-basic-select" data-type="b-year">
+                                        <div class="basic-select__selected js-basic-select-selected">Год</div>
+                                        <div class="basic-select__opts-wrap">
+                                            <div class="basic-select__opts-scroller js-select-scroller">
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2016">2016</div>  <!-- _selected -->
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2015">2015</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2014">2014</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2013">2013</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2012">2012</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2011">2011</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2010">2010</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2009">2009</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2008">2008</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2007">2007</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2006">2006</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2005">2005</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2004">2004</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2003">2003</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2002">2002</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2001">2001</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="2000">2000</div>
+                                                <div class="basic-select__opt js-basic-select-opt" data-val="1999">1999</div>
+                                            </div>
+                                            <div class="basic-select__bar-wrap js-select-scroller-bar-wrap">
+                                                <div class="basic-select__bar js-select-scroller-bar"></div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="pass_year" class="js-basic-select-input js-form-input" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Наименование подразделения выдавшего документ -->
+                            <div class="order-form-item js-form-item">
+                                <label for="pass_giver" class="form-label _pass-giver-label">Наименование<br>подразделения<br>выдавшего документ</label>
+                                <input id="pass_giver" name="pass_giver" type="text" class="form-input js-form-input" data-type="text">
+                            </div>
+                            <!-- Код подразделения выдавшего документ -->
+                            <div class="order-form-item js-form-item _pass-dep-item">
+                                <label for="pass_dep" class="form-label _pass-dep-label">Код подразделения<br>выдавшего документ</label>
+                                <input id="pass_dep" name="pass_dep" type="text" class="form-input js-form-input js-pass-dep" data-type="text">
+                            </div>
+                        </div>
+
+                        <!-- Блок 3 -->
+                        <div class="order-form__step-3">
+                            <div class="order-form__step-title">Адрес регистрации</div>
+                            <!-- Индекс -->
+                            <div class="order-form-item js-form-item">
+                                <label for="index" class="form-label">Индекс</label>
+                                <input id="index" name="index" type="text" class="form-input js-form-input js-pass-index" data-type="text">
+                            </div>
+                            <!-- Адрес -->
+                            <div class="order-form-item js-form-item">
+                                <label for="address" class="form-label">Адрес</label>
+                                <input id="address" name="address" type="text" class="form-input js-form-input js-suggestions" data-type="text" autocomplete="off">
+                            </div>
+                        </div>
+
+                        <!-- Оформить -->
+                        <div class="goods-separate-send-b">
+                            <button type="submit" class="goods-separate-send">Оплатить страховку</button>
+                            <div class="goods-send-text">Общая стоимость страховки:</div>
+                            <div class="goods-send__final-price">
+                                <span class="js-final-price">25 290</span>
+                                <span class="rub"> в</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Футер -->
+                ${require('html?interpolate&attrs=false&minimize=false!../Footer/footer.html')}
+            </div>
+        </section>
+    </body>
+</html>

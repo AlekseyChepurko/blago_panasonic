@@ -1,0 +1,491 @@
+/* ------------------- Главная ------------------- */
+
+.outer-wrap
+    max-width: 1340px
+    min-width: 1020px
+    margin: 15px auto 15px
+    padding: 0 10px
+    box-sizing: border-box
+
+.inner-wrap
+    min-height: 500px
+    margin: 0 auto
+    box-sizing: border-box
+    background-color: #fff
+    border: 1px solid #dbdbdb
+    box-shadow: 0 0 10px rgba(0,0,0,0.05)
+    
+.content
+    padding: 0 30px
+    transition: all $resize_tr
+    
+    @media $desktop
+        padding: 0 40px
+               
+.linked-btns-b
+    width: 609px
+    height: 62px
+    overflow: hidden
+    display: flex
+    margin-top: 57px
+    box-sizing: border-box
+    
+.linked-btn
+    box-sizing: border-box
+    font: 700 18px/62px $osc
+    color: #008ddd
+    letter-spacing: .5px
+    text-align: center
+    cursor: pointer
+    user-select: none
+    //transition: all $resize_tr
+    
+    &:nth-of-type(1)
+        width: 274px
+        border-radius: 3px 0 0 3px
+
+    &:nth-of-type(2)
+        width: 335px
+        border-radius: 0 3px 3px 0
+    
+    &._active
+        color: #fff
+        background-color: #797979
+        box-shadow: inset 0 10px 20px alpha(#000, .3)
+        cursor: default
+        pointer-events: none
+    
+    &:not(._active)
+        line-height: 60px
+        background: rgba(255,255,255,1);
+        background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(235,235,235,1)));
+        background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 100%);
+        background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 100%);
+        background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 100%);
+        background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 100%);
+        box-shadow: inset 0 10px 20px alpha(#000, 0)
+        border: 1px solid #e1e1e1
+        
+.goods-form
+    display: none
+    margin-top: 20px
+    border: 1px solid #e3e3e3
+    border-top: 2px solid #1b1b1b
+    
+    &._one
+        display: block
+        margin-top: 57px
+        border-top: 1px solid #e3e3e3
+        
+        .good-line__insurance-b
+            opacity: 0
+            pointer-events: none
+        
+    &._all
+        .good-line-wrap
+            height: 415px
+        
+        .good-line
+            margin-bottom: 20px
+            background-color: #fff
+            border-bottom: 1px solid #e3e3e3
+            
+.all-goods-line__info-1-b
+    width: 360px
+    margin-left: 40px
+    
+    .good-line__info-1__text-1
+        padding-left: 30px
+        line-height: 30px
+        
+        &:before
+            content: ''
+            position: absolute
+            top: 6px
+            left: -3px
+            width: 18px
+            height: 18px
+            background-color: transparent
+            background-repeat: no-repeat
+            background-position: 0 50%
+            background-size: 100% 100%
+            background-image: embedurl('../img/svg/check.svg')
+            
+.all-goods-line__info-2-b
+    margin-left: 30px
+    
+    .good-line__info-1__text-2
+        line-height: 30px
+            
+._separate-form
+    .goods-form
+        &._separate
+            display: block
+            
+._all-form
+    .goods-form
+        &._all
+            display: block
+
+.good-line-wrap
+    height: 148px
+    overflow: hidden
+    border-bottom: 1px solid #e3e3e3
+    transition: height .3s, background-color .1s
+    
+    &._open
+        height: 401px
+        background-color: #f5f5f5
+    
+        .good-line__img-b
+            &:after
+                opacity: 1
+        
+        .good-line__insurance-b
+            &:after
+                transform: rotate(-180deg)
+    
+    &._ins
+        .good-opt-ins
+            display: block
+    
+    &._protect
+        .good-opt-protect
+            display: block
+    
+.good-line
+    height: 149px
+    display: flex
+    align-items: center
+    box-sizing: border-box
+                
+.good-line__img-b
+    {$flex_no_shrink}
+    width: 110px
+    height: 110px
+    margin-left: 35px
+    z-index: 5
+    
+    &:after
+        content: ''
+        center()
+        background-color: alpha(#000, .04)
+        opacity: 0
+        z-index: 10
+        transition: opacity .1s
+    
+.good-line__img
+    width: 100%
+    
+.good-line__info-1-b
+    width: 100%
+    margin-left: 22px
+    min-width: 270px
+    max-width: 440px
+    
+.good-line__info-1__text-1
+    font: 400 16px/20px $ar
+    
+.good-line__info-1__text-2
+    font: 400 14px/20px $ar
+    color: #999
+    
+.good-line__info-2-b
+    width: 100%
+    margin-left: 10px
+    min-width: 270px
+    max-width: 400px
+    //background-color: pink
+    
+    .good-line__info-1__text-1
+        padding-left: 22px
+        
+        &:before
+            content: ''
+            position: absolute
+            top: 1px
+            left: -3px
+            width: 18px
+            height: 18px
+            background-color: transparent
+            background-repeat: no-repeat
+            background-position: 0 50%
+            background-size: 100% 100%
+            background-image: embedurl('../img/svg/check.svg')
+    
+.good-opt-ins,
+.good-opt-protect
+    display: none
+    
+.good-line__insurance-b
+    {$flex_no_shrink}
+    width: 195px
+    display: inline-block
+    margin-left: 24px
+    font: 700 15px/20px $ar
+    color: #008ddd
+    cursor: pointer
+    user-select: none
+    transition: all $resize_tr
+    
+    &:after
+        content: ''
+        display: inline-block
+        width: 0;
+        height: 0
+        margin-left: 6px
+        vertical-align: middle
+        border-style: solid
+        border-width: 4px 3px 0 3px
+        border-color: #008cdd transparent transparent transparent
+        transform-origin: 50% 50%
+        transition: all $resize_tr
+        
+    +hover()
+        color: #0086cf
+    
+        &:after
+            border-color: #0086cf transparent transparent transparent
+    
+.good-opt-b
+    width: calc(100% - 30px)
+    height: 112px
+    margin: 5px auto 10px
+    background-color: #fff
+    border-radius: 6px
+    box-shadow: 0 0 3px rgba(0,0,0,0.15)
+    transition: all $resize_tr
+    
+    +hover()
+        box-shadow: 0 3px 10px rgba(0,0,0,0.15)
+    
+    &._on
+        .good-opt-b__toggle-b__slider
+            background-color: #008ee0
+            
+            &:after
+                left: 18px
+                
+        .opt-b-price,
+        .opt-price-text
+            color: #333
+                         
+        .good-opt__radio-text
+            pointer-events: auto
+    
+        .basic-radio:checked + label
+            color: #333
+            
+            &:after
+                opacity: 1
+                
+        .basic-select
+            color: #333
+            pointer-events: auto
+                
+.good-opt-b__toggle-b
+    cursor: pointer
+
+.good-opt-b__toggle-b__slider
+    position: absolute
+    top: 42px
+    left: 29px
+    width: 40px
+    height: 24px
+    background-color: #ccc
+    border-radius: 12px
+    transition: all $resize_tr
+    
+    &:after
+        content: ''
+        position: absolute
+        top: 2px
+        left: 2px
+        width: 20px
+        height: 20px
+        background-color: #fff
+        border-radius: 50%
+        transition: all $resize_tr
+
+.good-opt-b__toggle-b__text
+    position: absolute
+    top: 43px
+    left: 98px
+    font: 700 16px/20px $ar
+    letter-spacing: .1px
+    user-select: none
+    
+    &:after
+        content: ''
+        position: absolute
+        top: 1px
+        right: -23px
+        width: 18px
+        height: 18px
+        background-color: transparent
+        background-repeat: no-repeat
+        background-position: 50% 50%
+        background-size: 100% 100%
+        background-image: embedurl('../img/svg/info.svg')
+
+.good-opt-b__radio-b
+    position: absolute
+    top: 35px
+    left: 50%
+    width: 300px
+    height: 40px
+    display: flex
+    margin-left: -3px
+    
+    @media (max-width: 1330px)
+        margin-left: -12%
+        
+.good-opt__radio-item
+    width: 100px
+    overflow: hidden
+    user-select: none
+    
+.good-opt__radio-text
+    padding-left: 27px
+    box-sizing: border-box
+    font: 400 16px/40px $ar
+    color: #999
+    cursor: pointer
+    pointer-events: none
+    transition: all $resize_tr
+    
+    &:before
+        content: ''
+        position: absolute
+        top: 10px
+        left: 1px
+        width: 18px
+        height: 18px
+        box-sizing: border-box
+        border-radius: 50%
+        border: 1px solid #e7e7e7
+        z-index: 1
+        
+    &:after
+        content: ''
+        position: absolute
+        top: 15px
+        left: 6px
+        width: 8px
+        height: 8px
+        border-radius: 4px
+        background-color: #00b0fc
+        opacity: 0
+        z-index: 10
+        transition: all $resize_tr
+        
+.opt-b-price
+    position: absolute
+    top: 36px
+    right: 26px
+    font: 700 20px/24px $ar
+    color: #ccc
+    
+.opt-price-text
+    color: #ccc
+    transition: all $resize_tr
+        
+.goods-separate-send-b
+    height: 98px
+    
+.goods-separate-send
+    position: absolute
+    top: 28px
+    left: 40px
+    width: 206px
+    height: 40px
+    font: 400 15px/40px $ar
+    color: #fff
+    letter-spacing: .2px
+    text-align: center
+    background-color: #0096e7
+    border-radius: 2px
+    border: none
+    outline: none
+    box-shadow: none
+    cursor: pointer
+    transition: all $resize_tr
+    
+    +hover()
+        background-color: #0086cf
+    
+.goods-send-text
+    position: absolute
+    top: 36px
+    right: 192px
+    font: 400 16px/24px $ar
+    
+.goods-send__final-price
+    position: absolute
+    top: 28px
+    right: 40px
+    width: 150px
+    font: 700 30px/24px $ar
+    text-align: right
+
+/* -------------- Успешная оплата, Ошибка при оплате -------------- */
+
+.payment-msg-b
+    height: 200px
+    margin-top: 138px
+    margin-bottom: 193px
+    box-sizing: border-box
+    border: 1px solid #e3e3e3
+    
+    &._error
+        height: auto
+        margin-top: 106px
+    
+        .payment-msg__content-b
+            width: 330px
+            height: 131px
+
+.payment-msg__content-b
+    width: 490px
+    margin: 67px auto 0
+    
+.payment-msg__ok-icon
+    position: absolute
+    top: -3px
+    left: 0
+    width: 64px
+    
+.payment-msg__text-1
+    padding-left: 84px
+    font: 18px/30px $osc
+    color: #1a1a1a
+    
+.payment-msg__text-2
+    padding-left: 84px
+    font: 400 14px/24px $ar
+    color: #333
+    
+.payment-msg__repay-b
+    height: 100px
+    box-sizing: border-box
+    background-color: #f6f6f6
+    border-top: 1px solid #e3e3e3
+
+.payment-msg__repay-btn
+    width: 206px
+    height: 40px
+    display: block
+    margin: 30px auto 0
+    font: 400 15px/40px $ar
+    color: #fff
+    letter-spacing: .2px
+    text-decoration: none
+    text-align: center
+    background-color: #0096e7
+    border-radius: 2px
+    transition: all $resize_tr
+    
+    +hover()
+        background-color: #0086cf
+    

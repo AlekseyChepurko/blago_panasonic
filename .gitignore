@@ -1,0 +1,16 @@
+node_modules
+
+npm-debug.log
+
+thumbs.db
+
+Thumbs.db
+
+.idea
+/pano.jpg
+/bitrix
+/lib
+/local
+/upload
+/resize
+/src/assets

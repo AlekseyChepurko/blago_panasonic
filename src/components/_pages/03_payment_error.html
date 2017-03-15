@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <!-- Head секция документа -->
+    ${require('html?interpolate&attrs=false&minimize=false!../_app/head.html')}
+
+    <body>
+        <section class="outer-wrap" data-html-class="main-page js-main-page">
+            <div class="inner-wrap">
+                <!-- Хэдер -->
+                ${require('html?interpolate&attrs=false&minimize=false!../Header/header.html')}
+
+                <div class="content js-content">
+                    <h1>Ошибка при совершении оплаты</h1>
+
+                    <div class="payment-msg-b _error">
+                        <div class="payment-msg__content-b">
+                            <img src="../img/svg/error.svg" alt="" class="payment-msg__ok-icon">
+                            <div class="payment-msg__text-1">Не удалось оплатить страховку</div>
+                            <div class="payment-msg__text-2">Пожалуйста, повторите оплату</div>
+                        </div>
+                        <div class="payment-msg__repay-b">
+                            <a href="#" class="payment-msg__repay-btn">Повторить попытку</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

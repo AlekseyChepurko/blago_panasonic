@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <!-- Head секция документа -->
+    ${require('html?interpolate&attrs=false&minimize=false!../_app/head.html')}
+
+    <body>
+        <section class="outer-wrap" data-html-class="main-page js-main-page">
+            <div class="inner-wrap">
+                <!-- Хэдер -->
+                ${require('html?interpolate&attrs=false&minimize=false!../Header/header.html')}
+
+                <div class="content js-content">  <!-- _all-form _separate-form -->
+                    <h1>Офомите страховой полис для приобретенных товаров</h1>
+
+                    <div class="linked-btns-b">
+                        <div class="linked-btn js-linked-btn" data-type="all">Cтрахование всех товаров</div>
+                        <div class="linked-btn js-linked-btn _active" data-type="separate">Cтрахование для каждого товара</div>
+                    </div>
+
+                    <!-- Форма всех товаров -->
+                    <form action="../data/form_less_15000.json" method="GET" class="goods-form _all js-goods-form _many">
+                        <!-- Товар 1 -->
+                        <div class="good-line-wrap js-good-line-wrap _open">
+                            <div class="good-line">
+                                <div class="all-goods-line__info-1-b">
+                                    <div class="good-line__info-1__text-1">Электробритва / ES-LV65</div>
+                                    <div class="good-line__info-1__text-1">Электробритва / ES-LV65</div>
+                                </div>
+                                <div class="all-goods-line__info-2-b">
+                                    <div class="good-line__info-1__text-2">Кол-во: <span class="js-good-amount">1</span> шт</div>
+                                    <div class="good-line__info-1__text-2">Кол-во: <span class="js-good-amount">1</span> шт</div>
+                                </div>
+                            </div>
+
+                            <!-- Товар 1 Продление гарантии -->
+                            <div class="good-opt-b good-opt-ins-b js-good-opt-b js-insurance" data-price="8800">
+                                <div class="good-opt-b__toggle-b js-good-opt-toggle">
+                                    <div class="good-opt-b__toggle-b__slider"></div>
+                                    <div class="good-opt-b__toggle-b__text">Продление гарантии</div>
+                                </div>
+                                <div class="good-opt-b__radio-b">
+                                    <div class="good-opt__radio-item">
+                                        <input class="basic-radio js-opt-input" id="all_goods_year_1" type="radio" name="all_goods_ins_length" value="1" checked>
+                                        <label class="good-opt__radio-text" for="all_goods_year_1">1 год</label>
+                                    </div>
+                                    <div class="good-opt__radio-item">
+                                        <input class="basic-radio js-opt-input" id="all_goods_year_2" type="radio" name="all_goods_ins_length" value="2">
+                                        <label class="good-opt__radio-text" for="all_goods_year_2">2 года</label>
+                                    </div>
+                                    <div class="good-opt__radio-item">
+                                        <input class="basic-radio js-opt-input" id="all_goods_year_3" type="radio" name="all_goods_ins_length" value="3">
+                                        <label class="good-opt__radio-text" for="all_goods_year_3">3 года</label>
+                                    </div>
+                                </div>
+                                <div class="opt-b-price">
+                                    <span class="opt-price-text js-opt-price">8 800</span>
+                                    <span class="rub"> в</span>
+                                </div>
+                                <input type="hidden" name="all_goods_insurance" value="0" class="js-opt-input-hidden">
+                            </div>
+                            <!-- Товар 1 Защита -->
+                            <div class="good-opt-b good-opt-portect-b js-good-opt-b js-protect" data-price="93450">
+                                <div class="good-opt-b__toggle-b js-good-opt-toggle">
+                                    <div class="good-opt-b__toggle-b__slider"></div>
+                                    <div class="good-opt-b__toggle-b__text">Защита</div>
+                                </div>
+                                <div class="opt-b-price">
+                                    <span class="opt-price-text js-opt-price">93 450</span>
+                                    <span class="rub"> в</span>
+                                </div>
+                                <input type="hidden" name="all_goods_protection" class="js-opt-input-hidden" value="0">
+                            </div>
+                        </div>
+
+                        <!-- Оформить -->
+                        <div class="goods-separate-send-b">
+                            <button type="submit" class="goods-separate-send">Оформить страховку</button>
+                            <div class="goods-send-text">Общая стоимость страховки:</div>
+                            <div class="goods-send__final-price">
+                                <span class="js-final-price">0</span>
+                                <span class="rub"> в</span>
+                            </div>
+                        </div>
+                        <input type="hidden" name="price-total" class="js-price-total" value="0">
+                    </form>
+
+                    <!-- Форма каждого товара-->
+                    <form action="../data/form.json" method="GET" class="goods-form _separate js-goods-form _many">
+                        <!-- Товар 1 -->
+                        <div class="good-line-wrap js-good-line-wrap">
+                            <div class="good-line">
+                                <div class="good-line__img-b">
+                                    <img src="../img/_content/good_2.jpg" alt="" class="good-line__img">
+                                </div>
+                                <div class="good-line__info-1-b">
+                                    <div class="good-line__info-1__text-1">Электробритва / ES-LV65</div>
+                                    <div class="good-line__info-1__text-2">Кол-во: <span class="js-good-amount">1</span> шт</div>
+                                </div>
+                                <div class="good-line__info-2-b">
+                                    <div class="good-line__info-1__text-1 good-opt-ins">Продление гарантии на <span class="js-ins-length">3</span> года</div>
+                                    <div class="good-line__info-1__text-1 good-opt-protect">Защита</div>
+                                </div>
+                                <div class="good-line__insurance-b js-good-ins-toggle">Выбрать страховку</div>
+                            </div>
+
+                            <!-- Товар 1 Продление гарантии -->
+                            <div class="good-opt-b good-opt-ins-b js-good-opt-b js-insurance" data-price="1580">
+                                <div class="good-opt-b__toggle-b js-good-opt-toggle">
+                                    <div class="good-opt-b__toggle-b__slider"></div>
+                                    <div class="good-opt-b__toggle-b__text">Продление гарантии</div>
+                                </div>
+                                <div class="good-opt-b__radio-b">
+                                    <div class="good-opt__radio-item">
+                                        <input class="basic-radio js-opt-input" id="good_1_year_1" type="radio" name="good_1_ins_length" value="1" checked>
+                                        <label class="good-opt__radio-text" for="good_1_year_1">1 год</label>
+                                    </div>
+                                    <div class="good-opt__radio-item">
+                                        <input class="basic-radio js-opt-input" id="good_1_year_2" type="radio" name="good_1_ins_length" value="2">
+                                        <label class="good-opt__radio-text" for="good_1_year_2">2 года</label>
+                                    </div>
+                                    <div class="good-opt__radio-item">
+                                        <input class="basic-radio js-opt-input" id="good_1_year_3" type="radio" name="good_1_ins_length" value="3">
+                                        <label class="good-opt__radio-text" for="good_1_year_3">3 года</label>
+                                    </div>
+                                </div>
+
+                                <!-- Селект количество -->
+                                <div class="basic-select js-basic-select">
+                                    <div class="basic-select__selected js-basic-select-selected">2 шт</div>
+                                    <div class="basic-select__opts-wrap">
+                                        <div class="basic-select__opts-scroller js-select-scroller">
+                                            <div class="basic-select__opt js-basic-select-opt _selected" data-val="1">1 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="2">2 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="3">3 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="4">4 шт</div>
+                                        </div>
+                                        <div class="basic-select__bar-wrap js-select-scroller-bar-wrap">
+                                            <div class="basic-select__bar js-select-scroller-bar"></div>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="good_1_amount" class="js-basic-select-input" value="1">
+                                </div>
+
+                                <div class="opt-b-price">
+                                    <span class="opt-price-text js-opt-price">1 580</span>
+                                    <span class="rub"> в</span>
+                                </div>
+                                <input type="hidden" name="good-1-insurance" value="0" class="js-opt-input-hidden">
+                            </div>
+                            <!-- Товар 1 Защита -->
+                            <div class="good-opt-b good-opt-portect-b js-good-opt-b js-protect" data-price="22500">
+                                <div class="good-opt-b__toggle-b js-good-opt-toggle">
+                                    <div class="good-opt-b__toggle-b__slider"></div>
+                                    <div class="good-opt-b__toggle-b__text">Защита</div>
+                                </div>
+                                <div class="opt-b-price">
+                                    <span class="opt-price-text js-opt-price">22 500</span>
+                                    <span class="rub"> в</span>
+                                </div>
+                                <input type="hidden" name="good-1-protection" class="js-opt-input-hidden" value="0">
+                            </div>
+                            <input type="hidden" name="good-1-price" value="0" class="js-good-price">
+                        </div>
+
+                        <!-- Товар 2 -->
+                        <div class="good-line-wrap js-good-line-wrap">
+                            <div class="good-line">
+                                <div class="good-line__img-b">
+                                    <img src="../img/_content/good_1.jpg" alt="" class="good-line__img">
+                                </div>
+                                <div class="good-line__info-1-b">
+                                    <div class="good-line__info-1__text-1">Электробритва / ES-LV65</div>
+                                    <div class="good-line__info-1__text-2">Кол-во: <span class="js-good-amount">1</span> шт</div>
+                                </div>
+                                <div class="good-line__info-2-b">
+                                    <div class="good-line__info-1__text-1 good-opt-ins">Продление гарантии на <span class="js-ins-length">1</span> года</div>
+                                    <div class="good-line__info-1__text-1 good-opt-protect">Защита</div>
+                                </div>
+                                <div class="good-line__insurance-b js-good-ins-toggle">Выбрать страховку</div>
+                            </div>
+
+                            <!-- Товар 2 Продление гарантии -->
+                            <div class="good-opt-b good-opt-ins-b js-good-opt-b js-insurance" data-price="1580">
+                                <div class="good-opt-b__toggle-b js-good-opt-toggle">
+                                    <div class="good-opt-b__toggle-b__slider"></div>
+                                    <div class="good-opt-b__toggle-b__text">Продление гарантии</div>
+                                </div>
+                                <div class="good-opt-b__radio-b">
+                                    <div class="good-opt__radio-item">
+                                        <input class="basic-radio js-opt-input" id="good_2_year_1" type="radio" name="good_2_ins_length" value="1" checked>
+                                        <label class="good-opt__radio-text" for="good_2_year_1">1 год</label>
+                                    </div>
+                                    <div class="good-opt__radio-item">
+                                        <input class="basic-radio js-opt-input" id="good_2_year_2" type="radio" name="good_2_ins_length" value="2">
+                                        <label class="good-opt__radio-text" for="good_2_year_2">2 года</label>
+                                    </div>
+                                    <div class="good-opt__radio-item">
+                                        <input class="basic-radio js-opt-input" id="good_2_year_3" type="radio" name="good_2_ins_length" value="3">
+                                        <label class="good-opt__radio-text" for="good_2_year_3">3 года</label>
+                                    </div>
+                                </div>
+
+                                <!-- Селект количество -->
+                                <div class="basic-select js-basic-select">
+                                    <div class="basic-select__selected js-basic-select-selected">2 шт</div>
+                                    <div class="basic-select__opts-wrap">
+                                        <div class="basic-select__opts-scroller js-select-scroller">
+                                            <div class="basic-select__opt js-basic-select-opt _selected" data-val="1">1 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="2">2 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="3">3 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="4">4 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="5">5 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="6">6 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="7">7 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="8">8 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="9">9 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="10">10 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="11">11 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="12">12 шт</div>
+                                        </div>
+                                        <div class="basic-select__bar-wrap js-select-scroller-bar-wrap">
+                                            <div class="basic-select__bar js-select-scroller-bar"></div>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="good_2_amount" class="js-basic-select-input" value="1">
+                                </div>
+
+                                <div class="opt-b-price">
+                                    <span class="opt-price-text js-opt-price">1 580</span>
+                                    <span class="rub"> в</span>
+                                </div>
+                                <input type="hidden" name="good-2-insurance" value="0" class="js-opt-input-hidden">
+                            </div>
+                            <!-- Товар 2 Защита -->
+                            <div class="good-opt-b good-opt-portect-b js-good-opt-b js-protect" data-price="22500">
+                                <div class="good-opt-b__toggle-b js-good-opt-toggle">
+                                    <div class="good-opt-b__toggle-b__slider"></div>
+                                    <div class="good-opt-b__toggle-b__text">Защита</div>
+                                </div>
+                                <div class="opt-b-price">
+                                    <span class="opt-price-text js-opt-price">22 500</span>
+                                    <span class="rub"> в</span>
+                                </div>
+                                <input type="hidden" name="good-2-protection" class="js-opt-input-hidden" value="0">
+                            </div>
+                            <input type="hidden" name="good-2-price" value="0" class="js-good-price">
+                        </div>
+
+                        <!-- Товар 3 -->
+                        <div class="good-line-wrap js-good-line-wrap _open">  <!-- _open -->
+                            <div class="good-line">
+                                <div class="good-line__img-b">
+                                    <img src="../img/_content/good_1.jpg" alt="" class="good-line__img">
+                                </div>
+                                <div class="good-line__info-1-b">
+                                    <div class="good-line__info-1__text-1">Электробритва / ES-LV65</div>
+                                    <div class="good-line__info-1__text-2">Кол-во: <span class="js-good-amount">1</span> шт</div>
+                                </div>
+                                <div class="good-line__info-2-b">
+                                    <div class="good-line__info-1__text-1 good-opt-ins">Продление гарантии на <span class="js-ins-length">1</span> года</div>
+                                    <div class="good-line__info-1__text-1 good-opt-protect">Защита</div>
+                                </div>
+                                <div class="good-line__insurance-b js-good-ins-toggle">Выбрать страховку</div>
+                            </div>
+
+                            <!-- Товар 3 Продление гарантии -->
+                            <div class="good-opt-b good-opt-ins-b js-good-opt-b js-insurance" data-price="1580">  <!-- _on -->
+                                <div class="good-opt-b__toggle-b js-good-opt-toggle">
+                                    <div class="good-opt-b__toggle-b__slider"></div>
+                                    <div class="good-opt-b__toggle-b__text">Продление гарантии</div>
+                                </div>
+                                <div class="good-opt-b__radio-b">
+                                    <div class="good-opt__radio-item">
+                                        <input class="basic-radio js-opt-input" id="good_3_year_1" type="radio" name="good_3_ins_length" value="1" checked>
+                                        <label class="good-opt__radio-text" for="good_3_year_1">1 год</label>
+                                    </div>
+                                    <div class="good-opt__radio-item">
+                                        <input class="basic-radio js-opt-input" id="good_3_year_2" type="radio" name="good_3_ins_length" value="2">
+                                        <label class="good-opt__radio-text" for="good_3_year_2">2 года</label>
+                                    </div>
+                                    <div class="good-opt__radio-item">
+                                        <input class="basic-radio js-opt-input" id="good_3_year_3" type="radio" name="good_3_ins_length" value="3">
+                                        <label class="good-opt__radio-text" for="good_3_year_3">3 года</label>
+                                    </div>
+                                </div>
+
+                                <!-- Селект количество -->
+                                <div class="basic-select js-basic-select">
+                                    <div class="basic-select__selected js-basic-select-selected">2 шт</div>
+                                    <div class="basic-select__opts-wrap">
+                                        <div class="basic-select__opts-scroller js-select-scroller">
+                                            <div class="basic-select__opt js-basic-select-opt _selected" data-val="1">1 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="2">2 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="3">3 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="4">4 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="5">5 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="6">6 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="7">7 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="8">8 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="9">9 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="10">10 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="11">11 шт</div>
+                                            <div class="basic-select__opt js-basic-select-opt" data-val="12">12 шт</div>
+                                        </div>
+                                        <div class="basic-select__bar-wrap js-select-scroller-bar-wrap">
+                                            <div class="basic-select__bar js-select-scroller-bar"></div>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="good_3_amount" class="js-basic-select-input" value="1">
+                                </div>
+
+                                <div class="opt-b-price">
+                                    <span class="opt-price-text js-opt-price">1 580</span>
+                                    <span class="rub"> в</span>
+                                </div>
+                                <input type="hidden" name="good-3-insurance" class="js-opt-input-hidden" value="0">
+                            </div>
+                            <!-- Товар 3 Защита -->
+                            <div class="good-opt-b good-opt-portect-b js-good-opt-b js-protect" data-price="22500">
+                                <div class="good-opt-b__toggle-b js-good-opt-toggle">
+                                    <div class="good-opt-b__toggle-b__slider"></div>
+                                    <div class="good-opt-b__toggle-b__text">Защита</div>
+                                </div>
+                                <div class="opt-b-price">
+                                    <span class="opt-price-text js-opt-price">22 500</span>
+                                    <span class="rub"> в</span>
+                                </div>
+                                <input type="hidden" name="good-3-protection" class="js-opt-input-hidden" value="0">
+                            </div>
+                            <input type="hidden" name="good-3-price" value="0" class="js-good-price">
+                        </div>
+
+                        <!-- Оформить -->
+                        <div class="goods-separate-send-b">
+                            <button type="submit" class="goods-separate-send">Оформить страховку</button>
+                            <div class="goods-send-text">Общая стоимость страховки:</div>
+                            <div class="goods-send__final-price">
+                                <span class="js-final-price">0</span>
+                                <span class="rub"> в</span>
+                            </div>
+                        </div>
+                        <input type="hidden" name="price-total" class="js-price-total" value="0">
+                    </form>
+                </div>
+
+                <!-- Футер -->
+                ${require('html?interpolate&attrs=false&minimize=false!../Footer/footer.html')}
+            </div>
+        </section>
+    </body>
+</html>

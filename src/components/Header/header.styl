@@ -1,0 +1,31 @@
+.header
+    height: 116px
+    box-sizing: border-box
+    text-align: right
+    border-bottom: 1px solid #e3e3e3;
+    
+.h-logo
+    position: absolute
+    top: 25px
+    left: 32px
+    transition: all $resize_tr
+    
+    @media $desktop
+        left: 42px
+    
+.h-phone-b
+    position: absolute
+    top: 38px
+    right: 30px
+    ransition: all $resize_tr
+    
+    @media $desktop
+        right: 42px
+
+.h-phone__text-1
+    font: 32px/20px $rob
+
+.h-phone__text-2
+    margin-top: 6px
+    font: 14px/20px $ar
+    color: #999;
